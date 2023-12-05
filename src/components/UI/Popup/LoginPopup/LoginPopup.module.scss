@@ -1,0 +1,191 @@
+@import '../../../../styles/const.scss';
+
+.container {
+    background-color: rgba(40, 40, 40, 0.40);
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+
+    .wrapper {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .modal {
+            width: 683px;
+            background-color: rgba(37, 37, 37, 0.80);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+
+            @media screen and (max-width: 1680px) {
+                padding: 20px;
+                width: 483px;
+            }
+
+            .error {
+                font-size: 20px;
+                color: rgb(255, 0, 0);
+                margin-bottom: 20px;
+            }
+
+            .form {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                padding-top: 70px;
+
+                @media screen and (max-width: 1680px) {
+                    padding-top: 50px;
+                }
+
+                .inputWrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                    margin-bottom: 10px;
+                }
+
+                .passwdWrapper {
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 2px solid #fff;
+
+                    .eyeBtn {
+                        width: 30px;
+                        height: 30px;
+                        margin-right: 5px;
+                        cursor: pointer;
+                    }
+
+                    .inputWrapp {
+                        display: flex;
+                        width: 100%;
+                        justify-content: space-between;
+                    }
+                }
+
+                .emailWrapper {
+                    border-bottom: 2px solid #fff;
+                }
+
+                .buttonWrapper {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-top: 100px;
+
+                    @media screen and (max-width: 1680px) {
+                        margin-top: 50px;
+                    }
+
+                    .button {
+                        background-color: $FontColorWhite;
+                        font-family: $FontFam;
+                        border-radius: 5px;
+                        font-size: 25px;
+                        padding: 10px 20px;
+                        border: none;
+                        cursor: pointer;
+
+                        @media screen and (max-width: 1680px) {
+                            font-size: 20px;
+                            padding: 7px 15px;
+                        }
+                    }
+                }
+
+                .questionWrapper {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    .questionBtn {
+                        font-size: 25px;
+                        font-family: $FontFam;
+                        color: $FontColorBlack;
+                        padding: 5px 13px;
+                        background-color: $FontColorWhite;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+
+                        @media screen and (max-width: 1680px) {
+                            padding: 3px 10px;
+                            font-size: 20px;
+                        }
+                    }
+
+                    .question {
+                        font-family: $FontFam;
+                        color: $FontColorWhite;
+                        font-size: 30px;
+
+                        @media screen and (max-width: 1680px) {
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                
+
+                .input {
+                    width: 100%;
+                    background-color: transparent;
+                    font-size: 40px;
+                    font-family: $FontFam;
+                    color: $FontColorWhite;
+                    border: none;
+                    
+
+                    @media screen and (max-width: 1680px) {
+                        font-size: 30px;
+                    }
+
+                    &:nth-last-child(2) {
+                        border-bottom: none;
+                    }
+
+                    &:focus {
+                        outline: none;
+                        box-shadow: transparent;
+                    }
+
+                    &::placeholder {
+                        color: #fff;
+                    }
+
+                    &::-moz-placeholder {
+                        color: #fff;
+                    }
+
+                    &::-webkit-input-placeholder {
+                        color: #fff;
+                    }
+
+                    &:-ms-input-placeholder {
+                        color: #fff;
+                    }
+                }
+            }
+
+            .Title {
+                font-family: $FontFam;
+                color: #fff;
+                font-size: 50px;
+                line-height: 35px;
+
+                @media screen and (max-width: 1680px) {
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+}

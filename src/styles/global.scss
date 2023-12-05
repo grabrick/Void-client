@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 375px;
+  margin: 0;
+  height: 10%;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'VT323', monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#__next {
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+input {
+  font-family: 'VT323';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'VT323';
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  font-family: 'VT323';
+  margin: 0;
+  padding: 0;
+}
+
+span {
+  font-family: 'VT323';
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-family: 'VT323';
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-family: 'VT323';
+  margin: 0;
+  padding: 0;
+}

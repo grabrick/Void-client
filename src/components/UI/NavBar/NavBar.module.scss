@@ -1,0 +1,20 @@
+.buttonWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 15px;
+
+    .navButton {
+        font-size: 28px;
+        border-radius: 5px;
+        border: none;
+        background-color: #252525;
+        padding: 5px 25px;
+        cursor: pointer;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex: content;
+    }
+}

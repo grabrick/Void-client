@@ -1,0 +1,104 @@
+.container {
+  height: 100%;
+  width: 100%;
+
+  .wrapper {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    background-color: rgba(40, 40, 40, 0.613);
+
+    .modal {
+      width: 683px;
+      background-color: rgb(37, 37, 37);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+
+      .title {
+        color: #fff;
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .nameWrapper {
+          display: flex;
+          gap: 40px;
+          margin-top: 20px;
+        }
+
+        .licenseWrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .license {
+            font-size: 20px;
+            color: #fff;
+          }
+        }
+
+        .confirmWrapper {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+
+          .confirmBtn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: flex-end;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+
+            .btnText {
+              font-size: 24px;
+            }
+          }
+        }
+
+        .input {
+          width: 100%;
+          background-color: transparent;
+          font-size: 40px;
+          color: #fff;
+          border: none;
+          border-bottom: 2px solid #fff;
+          outline: none;
+          box-shadow: transparent;
+
+          &::placeholder {
+            color: #fff;
+          }
+
+          &::-moz-placeholder {
+            color: #fff;
+          }
+
+          &::-webkit-input-placeholder {
+            color: #fff;
+          }
+
+          &:-ms-input-placeholder {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

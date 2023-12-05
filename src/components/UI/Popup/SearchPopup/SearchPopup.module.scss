@@ -1,0 +1,42 @@
+.container {
+  height: 100%;
+  width: 100%;
+
+  .wrapper {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    backdrop-filter: blur(5px);
+    background-color: rgba(40, 40, 40, 0.613);
+    padding-top: 10px;
+
+    .modal {
+      width: 683px;
+      background-color: rgb(37, 37, 37);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+      border-radius: 10px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 20px;
+
+      .input {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-size: 30px;
+
+        &::placeholder {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+
+    .wrapper {
+        // background-color: aqua;
+
+        .cardWrapper {
+            display: flex;
+            gap: 30px;
+        }
+
+        .routeTitle {
+            margin: 40px 0;
+            font-size: 32px;
+        }
+    }
+}

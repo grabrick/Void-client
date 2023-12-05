@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .wrapper {
+    flex: 1 1 auto;
+  }
+
+  .main {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 150px;
+  }
+
+  .changeBar {
+    flex: 1 1 auto;
+    // overflow-y: hidden;
+  }
+}

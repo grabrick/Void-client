@@ -1,0 +1,23 @@
+.container {
+  margin: 40px 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+
+  .routeWrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 60px;
+
+    .routeTitle {
+      font-size: 32px;
+      margin: 0;
+    }
+  }
+
+  .routeTitle {
+    font-size: 32px;
+    margin: 0;
+  }
+}

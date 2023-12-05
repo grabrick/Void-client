@@ -1,0 +1,40 @@
+@import '../../styles/const.scss';
+
+.container {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 150px;
+    // height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        
+        @media screen and (max-width: 1440px) {
+            gap: 3px;
+        }
+
+        .smallText {
+            font-family: $FontFam;
+            font-size: 22px;
+
+            @media screen and (max-width: 1440px) {
+                font-size: 18px;
+            }
+        }   
+
+        .largeText {
+            font-family: $FontFam;
+            font-size: 40px;
+
+            @media screen and (max-width: 1440px) {
+                font-size: 30px;
+            }
+        }
+    }
+}

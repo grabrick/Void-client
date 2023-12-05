@@ -1,0 +1,47 @@
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: fit-content;
+    height: 100%;
+    background-color: #252525;
+    padding: 15px;
+    border-radius: 10px;
+
+    .image {
+        padding: 10px 0;
+    }
+
+    .title {
+        color: #fff;
+        font-size: 28px;
+    }
+
+    .infoWrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .buyButton {
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 25px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .desc {
+            color: #fff;
+            font-size: 28px;
+            max-width: 350px;
+        }
+
+        .price {
+            color: #fff;
+            font-size: 28px;
+        }
+    }
+
+
+}
