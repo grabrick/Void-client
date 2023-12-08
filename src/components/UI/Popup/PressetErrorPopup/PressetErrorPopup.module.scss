@@ -1,0 +1,57 @@
+.container {
+  height: 100%;
+  width: 100%;
+
+  .wrapper {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(40, 40, 40, 0.40);
+    backdrop-filter: blur(5px);
+
+    .modal {
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      align-items: center;
+      background-color: rgba(37, 37, 37, 0.80);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+      border-radius: 5px;
+
+      .textWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .errorTitle {
+          color: #fff;
+        }
+
+        .errorText {
+          margin-top: 10px;
+          color: #fff;
+        }
+      }
+
+
+      .buttonWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        .button {
+          background-color: #fff;
+          padding: 5px 10px;
+          font-size: 22px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

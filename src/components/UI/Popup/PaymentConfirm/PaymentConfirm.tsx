@@ -1,28 +1,44 @@
-import { FC, useEffect, useState } from "react";
+import { FC, Key, useEffect, useState } from "react";
 import m from "./PaymentConfirm.module.scss";
 import { useForm, SubmitHandler } from "react-hook-form";
 import CheckBox from "../../CheckBox/CheckBox";
 import check from "@/assets/icons/Check.svg";
 import Image from "next/image";
+import { PresetService } from "@/services/preset/preset.services";
+import { useRouter } from "next/router";
+
+type TPreset = {
+  _id: Key | null | undefined;
+  image: string | null;
+  name: string;
+  desc: string;
+  price: {
+    count: number,
+    currency: string
+  };
+}
 
 type TProps = {
+  currentPreset: TPreset | null;
   setActive: (value: boolean) => void;
 };
 
-const PaymentConfirm: FC<TProps> = ({ setActive }) => {
+const PaymentConfirm: FC<TProps> = ({ setActive, currentPreset }) => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [activeBtn, setActiveBtn] = useState<boolean>(false);
+  const router = useRouter();
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm<any>();
-  const onSubmit: SubmitHandler<any> = (data) => {
-    // AuthService.login(data.Email, data.Password).then(res => {
-    //   if(res.status === 201) {
-    //     router.push('/')
-    //   }
-    // })
+  const onSubmit: SubmitHandler<any> = () => {
+    PresetService.paymentPreset(currentPreset)
+    .then((res) => {
+      if(res.status === 200) {
+        router.push("/");
+      }
+    })
   };
 
   useEffect(() => {
@@ -31,7 +47,6 @@ const PaymentConfirm: FC<TProps> = ({ setActive }) => {
     } else {
       setActiveBtn(false);
     }
-    console.log("123");
   }, [isActive]);
 
   return (

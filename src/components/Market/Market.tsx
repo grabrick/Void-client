@@ -12,9 +12,21 @@ type TProps = {
   isOpened: boolean
 }
 
+type TPreset = {
+  _id: Key | null | undefined | any;
+  image: string | null;
+  name: string;
+  desc: string;
+  price: {
+    count: number,
+    currency: string
+  };
+}
+
 const Market:FC<TProps> = ({ marketValue, setIsOpened, isOpened }) => {
   const [active, setActive] = useState<boolean>(false);
-  // const data =  PresetService.getCards()
+  const [currentPreset, setCurrentPreset] = useState<any>(null)
+
   return (
     <div className={m.container}>
       <div className={m.wrapper}>
@@ -22,19 +34,12 @@ const Market:FC<TProps> = ({ marketValue, setIsOpened, isOpened }) => {
 
         <div className={m.cardWrapper}>
           {marketValue.map(
-            (items: {
-              _id: Key | null | undefined;
-              image: string | null;
-              name: string;
-              desc: string;
-              price: {
-                count: number,
-                currency: string
-              };
-            }) => (
+            (items: TPreset) => (
               <PresetCard
                 key={items._id}
+                id={items._id}
                 setActive={setActive}
+                setCurrentPreset={setCurrentPreset}
                 active={active}
                 image={items.image}
                 name={items.name}
@@ -48,7 +53,7 @@ const Market:FC<TProps> = ({ marketValue, setIsOpened, isOpened }) => {
         </div>
       </div>
       {isOpened && <SearchPopup setIsOpened={setIsOpened} isOpened={isOpened} />}
-      {active && <PaymentConfirm setActive={setActive} />}
+      {active && <PaymentConfirm setActive={setActive} currentPreset={currentPreset} />}
     </div>
   );
 };

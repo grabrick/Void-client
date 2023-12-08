@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
   
   const marketValue = await PresetService.getCards()
-
+  
   return { 
     props: {
       marketValue: marketValue
