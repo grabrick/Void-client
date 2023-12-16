@@ -33,7 +33,7 @@ const Profile = ({ setCurrentPage }: TProps) => {
   }, [change]);
 
   return (
-    <div className={m.container}>
+    <section className={m.container}>
       <div className={m.wrapper}>
         <PageRouter title={"Profile"} subTitle={change} setChange={setChange} />
 
@@ -64,7 +64,7 @@ const Profile = ({ setCurrentPage }: TProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

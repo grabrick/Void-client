@@ -28,7 +28,7 @@ const Market:FC<TProps> = ({ marketValue, setIsOpened, isOpened }) => {
   const [currentPreset, setCurrentPreset] = useState<any>(null)
 
   return (
-    <div className={m.container}>
+    <section className={m.container}>
       <div className={m.wrapper}>
         <PageRouter title={"Market"} subTitle={null} />
 
@@ -54,7 +54,7 @@ const Market:FC<TProps> = ({ marketValue, setIsOpened, isOpened }) => {
       </div>
       {isOpened && <SearchPopup setIsOpened={setIsOpened} isOpened={isOpened} />}
       {active && <PaymentConfirm setActive={setActive} currentPreset={currentPreset} />}
-    </div>
+    </section>
   );
 };
 

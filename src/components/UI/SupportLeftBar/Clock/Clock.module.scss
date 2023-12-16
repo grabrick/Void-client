@@ -1,0 +1,36 @@
+@import '../../../../styles/const.scss';
+
+.clock {
+  display: flex;
+  align-items: center;
+  max-width: fit-content;
+  gap: 10px;
+
+  .hours {
+    font-size: 130px;
+    padding: 20px;
+    background-color: $CardColor;
+    color: $FontColorWhite;
+    border-radius: 7px;
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    
+    .square {
+      width: 25px;
+      height: 25px;
+      background-color: $FontColorBlack;
+    }
+  }
+
+  .minutes {
+    font-size: 130px;
+    padding: 20px;
+    color: $FontColorWhite;
+    background-color: $CardColor;
+    border-radius: 7px;
+  }
+}

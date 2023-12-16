@@ -1,0 +1,72 @@
+.container {
+  height: 100%;
+  width: 100%;
+
+  .wrapper {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(40, 40, 40, 0.40);
+    backdrop-filter: blur(5px);
+
+    .modal {
+      display: flex;
+      flex-direction: column;
+      padding: 15px;
+      background-color: rgba(37, 37, 37, 0.80);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+      border-radius: 5px;
+      // max-width: 1200px;
+
+      @media screen and (max-width: 1050px) {
+        max-width: 790px;
+      } 
+
+      @media screen and (max-width: 790px) {
+        max-width: 530px;
+      }
+
+      @media screen and (max-width: 525px) {
+        max-width: 270px;
+      }
+      
+      .navigateBar {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+
+        .navigateBarWrapper {
+          width: 100%;
+          max-width: 200px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-color: #fff;
+          padding: 5px 10px;
+          border-radius: 7px;
+        }
+
+        .img {
+          cursor: pointer;
+        }
+      }
+
+      .content {
+        display: flex;
+        gap: 20px; 
+        flex-wrap: wrap;
+        max-width: 1020px;
+        padding: 20px 0;
+
+        @media screen and (max-width: 1050px) {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

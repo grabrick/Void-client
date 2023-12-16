@@ -31,7 +31,7 @@ const Auth = () => {
   };
 
   return (
-    <div className={m.container}>
+    <section className={m.container}>
       <motion.div
         style={{ backgroundImage: `url(${images[currentImageIndex].src})` }}
         initial="initial"
@@ -53,7 +53,7 @@ const Auth = () => {
       ) : (
         <RegisterPopup setChange={setChange} />
       )}
-    </div>
+    </section>
   );
 };
 

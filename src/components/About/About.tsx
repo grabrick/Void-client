@@ -31,7 +31,7 @@ const About = () => {
   };
 
   return (
-    <div className={m.container}>
+    <section className={m.container}>
       {!buttonClicked && (
         <>
           <Reveal slideColor={"#252525"}>
@@ -155,7 +155,7 @@ const About = () => {
           )}
         </>
       )}
-    </div>
+    </section>
   );
 };
 
