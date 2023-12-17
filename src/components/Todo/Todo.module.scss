@@ -1,3 +1,4 @@
+@import '../../styles/const.scss';
 
 .container {
   width: 100%;
@@ -7,6 +8,85 @@
   .wrapper {
     // height: 600px;
     // filter: blur(3px);
+
+    .content {
+      display: flex;
+      gap: 30px;
+
+      .windowTodo {
+        width: 1000px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        background-color: #252525;
+        border: 2px solid #252525;
+        border-radius: 7px;
+
+        .todoHeader {
+          background-color: #fff;
+          border-radius: 5px 5px 0 0;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          justify-content: flex-end;
+
+          .button {
+            background-color: #252525;
+            color: #fff;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 25px;
+            padding: 10px;
+            border-radius: 7px;
+            cursor: pointer;
+
+            &:hover {
+              transform: scale(1.1);
+              transition: all 0.3s ease-out;
+            }
+            
+            .img {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+
+        .section {
+          cursor: pointer;
+          
+          &:hover {
+            background-color: #ffffff29;
+            transition: all 0.5s ease-out;
+          }
+        }
+
+        .headerTitle {
+          font-family: 'VT323';
+          font-size: 25px;
+          color: #fff;
+
+          &:nth-child(2) {
+            text-align: left;
+          }
+        }
+
+        .rowTitle {
+          font-family: 'VT323';
+          font-size: 20px;
+          color: #fff;
+          text-align: center;
+
+          &:nth-child(2) {
+            text-align: left;
+            padding-left: 10px;
+          }
+        }
+      }
+    }
 
     .errorWrapper {
       width: 100%;
@@ -21,5 +101,22 @@
         color: #fff;
       }
     }
+  }
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  // border: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 5px;
+
+  &:nth-child(1) {
+    border-left: none;
   }
 }
