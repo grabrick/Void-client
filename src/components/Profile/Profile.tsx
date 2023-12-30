@@ -38,23 +38,9 @@ const Profile = ({ setCurrentPage }: TProps) => {
         <PageRouter title={"Profile"} subTitle={change} setChange={setChange} />
 
         <div className={m.content}>
-          <div className={m.leftBar}>
-            <SlicedReveal delay={0.5} duration={0.5}>
-              <>
-                <div className={m.userInfo}>
-                  <div className={m.avatarWrapper}>
-                    <Image className={m.avatar} src={avatar} alt="" />
-                  </div>
-                  <p className={m.userName}>FirstName, LastName</p>
-                  <div className={m.balanceWrapper}>
-                    <p className={m.balanceTitle}>Balance:</p>
-                    <span className={m.balanceCount}>0$</span>
-                  </div>
-                </div>
-                <NavBar setChange={setChange} change={change} />
-              </>
-            </SlicedReveal>
-          </div>
+          {/* <div className={m.leftBar}> */}
+              <NavBar setChange={setChange} change={change} />
+          {/* </div> */}
 
           <div className={m.rightBar}>
             {change === "Setting" && <Setting />}

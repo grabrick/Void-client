@@ -5,9 +5,9 @@ import SupportLeftBar from "../UI/SupportLeftBar/SupportLeftBar";
 import m from "./Todo.module.scss";
 import FullCalendar from "../UI/Popup/FullCalendar/FullCalendar";
 import Image from "next/image";
-import Create from "@/assets/icons/Create.svg";
-import Edit from "@/assets/icons/EditPenW.svg";
-import TrashCan from "@/assets/icons/TrashCan.svg";
+import Create from "@/assets/icons/CreateBlack.svg";
+import Edit from "@/assets/icons/EditPenBlack.svg";
+import TrashCan from "@/assets/icons/TrashCanBlack.svg";
 
 const Todo = ({ validateData }: any) => {
   const pressetConfig = validateData.user.activePresset;
@@ -51,18 +51,25 @@ const Todo = ({ validateData }: any) => {
               <SupportLeftBar setIsOpenedCalendar={setIsOpenedCalendar} />
               <div className={m.windowTodo}>
                 <div className={m.todoHeader}>
-                  <button className={m.button}>
-                    <Image className={m.img} src={Create} alt="" />
-                    {"Create"}
-                  </button>
-                  <button className={m.button}>
-                    <Image className={m.img} src={Edit} alt="" />
-                    {"Edit"}
-                  </button>
-                  <button className={m.button}>
-                    <Image className={m.img} src={TrashCan} alt="" />
-                    {"Delete"}
-                  </button>
+                  <div className={m.left}>
+                    <div className={m.search}>
+                      <Image src={""} alt="" />
+                    </div>
+                  </div>
+                  <div className={m.right}>
+                    <button className={m.button}>
+                      <Image className={m.img} src={Create} alt="" />
+                      {"Create"}
+                    </button>
+                    <button className={m.button}>
+                      <Image className={m.img} src={Edit} alt="" />
+                      {"Edit"}
+                    </button>
+                    <button className={m.button}>
+                      <Image className={m.img} src={TrashCan} alt="" />
+                      {"Delete"}
+                    </button>
+                  </div>
                 </div>
                 <table className={m.table}>
                   <thead>
@@ -72,8 +79,7 @@ const Todo = ({ validateData }: any) => {
                           key={index}
                           className={m.headerTitle}
                           style={{
-                            width:
-                              index === 1 ? "500px" : "100px",
+                            width: index === 1 ? "500px" : "100px",
                           }}
                         >
                           {header}
@@ -85,10 +91,7 @@ const Todo = ({ validateData }: any) => {
                     {data.rows.map((row, index) => (
                       <tr key={index} className={m.section}>
                         {row.cells.map((cell, index) => (
-                          <td
-                            key={index}
-                            className={m.rowTitle}
-                          >
+                          <td key={index} className={m.rowTitle}>
                             {cell}
                             {index === 0 || index === 1 ? "" : <br />}
                           </td>

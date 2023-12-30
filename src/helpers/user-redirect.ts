@@ -1,5 +1,5 @@
 import { GetServerSidePropsContext } from "next";
-import { parseCookies } from "nookies";
+import { parseCookies, destroyCookie } from "nookies";
 
 export function redirectFirstUsers(context: GetServerSidePropsContext) {
     const { user } = parseCookies(context);
@@ -15,7 +15,15 @@ export function redirectFirstUsers(context: GetServerSidePropsContext) {
           };
         }
       } catch (e) {
-        console.error('Ошибка при разборе JSON из cookie', e);
+        destroyCookie(context, 'user');
+        destroyCookie(context, 'refreshToken');
+
+        return {
+          redirect: {
+            destination: "/login",
+            permanent: false,
+          },
+        };
       }
     }
   return { props: {

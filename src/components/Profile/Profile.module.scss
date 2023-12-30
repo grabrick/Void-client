@@ -1,3 +1,5 @@
+@import '../../styles/const.scss';
+
 .container {
     width: 100%;
 
@@ -9,58 +11,10 @@
             display: flex;
             // padding: 0 100px;
             gap: 60px;
+        }
 
-            .leftBar {
-                display: flex;
-                flex-direction: column;
-                // padding: 10px;
-                align-items: center;
-                // width: 100%;
-                // max-width: 200px;
-                // background-color: red;
-
-                .userInfo {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
-                    align-items: center;
-
-                    .balanceWrapper {
-                        display: flex;
-                        align-items: center;
-                        gap: 5px;
-
-                        .balanceTitle {
-                            font-size: 25px;
-                        }
-
-                        .balanceCount {
-                            font-size: 25px;
-                        }
-                    }
-
-                    .userName {
-                        font-size: 20px;
-                    }
-
-                    .avatarWrapper {
-                        width: 100px;
-                        height: 100px;
-                        border-radius: 100px;
-                        background-color: #252525;
-
-                        .avatar {
-                            width: 100px;
-                            height: 100px;
-                            border-radius: 100px;
-                        }
-                    }
-                }
-            }
-
-            .rightBar {
-                width: 100%;
-            }
+        .rightBar {
+            width: 100%;
         }
     }
 }

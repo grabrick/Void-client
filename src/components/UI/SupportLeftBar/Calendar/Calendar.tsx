@@ -1,7 +1,7 @@
 import Image from "next/image";
 import m from "./Calendar.module.scss";
-import Left from "@/assets/icons/ArrowCalendarLeft.svg";
-import Right from "@/assets/icons/ArrowCalendarRight.svg";
+import Left from "@/assets/icons/ArrowCalendarLeftWhite.svg";
+import Right from "@/assets/icons/ArrowCalendarRightWhite.svg";
 import {
   format,
   addMonths,

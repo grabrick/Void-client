@@ -36,6 +36,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const findUser = await UserService.getUser(userData);
 
   return { props: {
-    findUser: findUser
+    findUser: findUser || null
   } };
 };

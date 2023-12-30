@@ -9,7 +9,8 @@
   .hours {
     font-size: 130px;
     padding: 20px;
-    background-color: $CardColor;
+    background-color: rgba(37, 37, 37, 0.50);
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
     color: $FontColorWhite;
     border-radius: 7px;
   }
@@ -20,8 +21,8 @@
     gap: 50px;
     
     .square {
-      width: 25px;
-      height: 25px;
+      width: 20px;
+      height: 20px;
       background-color: $FontColorBlack;
     }
   }
@@ -30,7 +31,8 @@
     font-size: 130px;
     padding: 20px;
     color: $FontColorWhite;
-    background-color: $CardColor;
+    background-color: rgba(37, 37, 37, 0.50);
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 7px;
   }
 }

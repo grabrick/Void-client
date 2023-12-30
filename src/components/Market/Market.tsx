@@ -1,5 +1,5 @@
 import { FC, Key, useState } from "react";
-import PresetCard from "../UI/PresetCard/PresetCard";
+import PresetCard from "./PresetCard/PresetCard";
 import m from "./Market.module.scss";
 import PageRouter from "../UI/PageRouter/PageRouter";
 import PaymentConfirm from "../UI/Popup/PaymentConfirm/PaymentConfirm";

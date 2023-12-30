@@ -1,11 +1,13 @@
+@import '../../../../styles/const.scss';
+
 .container {
-  background-color: #252525;
+  background-color: $Dark50;
   border-radius: 10px;
-  border: #252525 1.5px solid;
   min-height: 360px;
 
   .funcBar {
-    background-color: #fff;
+    // background-color: #fff;
+    border-bottom: 1px solid $White;
     border-radius: 10px 10px 0 0;
     width: 100%;
     // height: 60px;
