@@ -4,16 +4,14 @@ import PressetErrorPopup from "../UI/Popup/PressetErrorPopup/PressetErrorPopup";
 import SupportLeftBar from "../UI/SupportLeftBar/SupportLeftBar";
 import m from "./Todo.module.scss";
 import FullCalendar from "../UI/Popup/FullCalendar/FullCalendar";
-import Image from "next/image";
-import Create from "@/assets/icons/CreateBlack.svg";
-import Edit from "@/assets/icons/EditPenBlack.svg";
-import TrashCan from "@/assets/icons/TrashCanBlack.svg";
+import FolderTable from "./FolderTable/FolderTable";
+import SlicedReveal from "../UI/Reveal/SlicedReveal";
 
 const Todo = ({ validateData }: any) => {
   const pressetConfig = validateData.user.activePresset;
   const [isOpenedCalendar, setIsOpenedCalendar] = useState<boolean>(false);
   const data = {
-    headers: ["Number", "Folder Name", "Tags", "Date", "Closed"],
+    headers: ["#", "Folder Name", "Tags", "Date", "Closed"],
     rows: [
       {
         number: 1,
@@ -48,59 +46,12 @@ const Todo = ({ validateData }: any) => {
             <PageRouter title={"Home"} subTitle={null} />
 
             <div className={m.content}>
-              <SupportLeftBar setIsOpenedCalendar={setIsOpenedCalendar} />
-              <div className={m.windowTodo}>
-                <div className={m.todoHeader}>
-                  <div className={m.left}>
-                    <div className={m.search}>
-                      <Image src={""} alt="" />
-                    </div>
-                  </div>
-                  <div className={m.right}>
-                    <button className={m.button}>
-                      <Image className={m.img} src={Create} alt="" />
-                      {"Create"}
-                    </button>
-                    <button className={m.button}>
-                      <Image className={m.img} src={Edit} alt="" />
-                      {"Edit"}
-                    </button>
-                    <button className={m.button}>
-                      <Image className={m.img} src={TrashCan} alt="" />
-                      {"Delete"}
-                    </button>
-                  </div>
-                </div>
-                <table className={m.table}>
-                  <thead>
-                    <tr>
-                      {data.headers.map((header, index) => (
-                        <th
-                          key={index}
-                          className={m.headerTitle}
-                          style={{
-                            width: index === 1 ? "500px" : "100px",
-                          }}
-                        >
-                          {header}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.rows.map((row, index) => (
-                      <tr key={index} className={m.section}>
-                        {row.cells.map((cell, index) => (
-                          <td key={index} className={m.rowTitle}>
-                            {cell}
-                            {index === 0 || index === 1 ? "" : <br />}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <SlicedReveal duration={0.7} delay={0.5}>
+                <SupportLeftBar setIsOpenedCalendar={setIsOpenedCalendar} />
+              </SlicedReveal>
+              <SlicedReveal duration={0.7} delay={0.5}>
+                <FolderTable data={data} />
+              </SlicedReveal>
             </div>
           </div>
         )}

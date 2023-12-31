@@ -1,3 +1,5 @@
+@import '../../../../styles/const.scss';
+
 .container {
   height: 100%;
   width: 100%;
@@ -18,8 +20,8 @@
       display: flex;
       flex-direction: column;
       padding: 15px;
-      background-color: rgba(37, 37, 37, 0.80);
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+      background-color: $Dark50;
+      box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
       border-radius: 5px;
       // max-width: 1200px;
 
@@ -53,6 +55,11 @@
 
         .img {
           cursor: pointer;
+
+          &:hover {
+            transform: scale(1.2);
+            transition: all ease-in-out .3s;
+          }
         }
       }
 

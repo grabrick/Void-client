@@ -1,3 +1,5 @@
+@import '../../../../styles/const.scss';
+
 .container {
   height: 100%;
   width: 100%;
@@ -17,8 +19,8 @@
 
     .modal {
       width: 683px;
-      background-color: rgb(37, 37, 37);
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+      background-color: $Dark50;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 10px;
       display: flex;
       gap: 10px;

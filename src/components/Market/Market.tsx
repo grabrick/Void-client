@@ -5,12 +5,13 @@ import PageRouter from "../UI/PageRouter/PageRouter";
 import PaymentConfirm from "../UI/Popup/PaymentConfirm/PaymentConfirm";
 import { PresetService } from "@/services/preset/preset.services";
 import SearchPopup from "../UI/Popup/SearchPopup/SearchPopup";
+import SlicedReveal from "../UI/Reveal/SlicedReveal";
 
 type TProps = {
-  marketValue: any,
-  setIsOpened: (value: boolean) => void,
-  isOpened: boolean
-}
+  marketValue: any;
+  setIsOpened: (value: boolean) => void;
+  isOpened: boolean;
+};
 
 type TPreset = {
   _id: Key | null | undefined | any;
@@ -18,23 +19,23 @@ type TPreset = {
   name: string;
   desc: string;
   price: {
-    count: number,
-    currency: string
+    count: number;
+    currency: string;
   };
-}
+};
 
-const Market:FC<TProps> = ({ marketValue, setIsOpened, isOpened }) => {
+const Market: FC<TProps> = ({ marketValue, setIsOpened, isOpened }) => {
   const [active, setActive] = useState<boolean>(false);
-  const [currentPreset, setCurrentPreset] = useState<any>(null)
+  const [currentPreset, setCurrentPreset] = useState<any>(null);
 
   return (
     <section className={m.container}>
       <div className={m.wrapper}>
         <PageRouter title={"Market"} subTitle={null} />
 
-        <div className={m.cardWrapper}>
-          {marketValue.map(
-            (items: TPreset) => (
+        <SlicedReveal delay={0.5} duration={0.5}>
+          <div className={m.cardWrapper}>
+            {marketValue.map((items: TPreset) => (
               <PresetCard
                 key={items._id}
                 id={items._id}
@@ -46,14 +47,18 @@ const Market:FC<TProps> = ({ marketValue, setIsOpened, isOpened }) => {
                 desc={items.desc}
                 price={items.price}
                 delay={0.7}
-                duration={0.5}
+                duration={0.7}
               />
-            )
-          )}
-        </div>
+            ))}
+          </div>
+        </SlicedReveal>
       </div>
-      {isOpened && <SearchPopup setIsOpened={setIsOpened} isOpened={isOpened} />}
-      {active && <PaymentConfirm setActive={setActive} currentPreset={currentPreset} />}
+      {isOpened && (
+        <SearchPopup setIsOpened={setIsOpened} isOpened={isOpened} />
+      )}
+      {active && (
+        <PaymentConfirm setActive={setActive} currentPreset={currentPreset} />
+      )}
     </section>
   );
 };

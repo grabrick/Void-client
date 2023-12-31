@@ -1,9 +1,9 @@
 @import '../../../../styles/const.scss';
 
 .container {
-  background-color: #252525;
+  background-color: $Dark50;
+  box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  border: #252525 1.5px solid;
   min-height: 360px;
   display: flex;
   align-items: center;

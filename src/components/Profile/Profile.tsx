@@ -39,7 +39,7 @@ const Profile = ({ setCurrentPage }: TProps) => {
 
         <div className={m.content}>
           {/* <div className={m.leftBar}> */}
-              <NavBar setChange={setChange} change={change} />
+          <NavBar setChange={setChange} change={change} />
           {/* </div> */}
 
           <div className={m.rightBar}>
