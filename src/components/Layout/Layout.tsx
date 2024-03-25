@@ -1,8 +1,9 @@
-import React, { FC, PropsWithChildren, useEffect } from "react";
+import React, { FC, PropsWithChildren, useEffect, useRef, useState } from "react";
 import Footer from "../Footer/Footer";
 import m from "./Layout.module.scss";
 import { useRouter } from "next/router";
 import Header from "../Header/Header";
+import { useCurrentTheme } from "@/helpers/hooks/useOptions";
 
 const Layout: FC<PropsWithChildren<any>> = ({
   children,
@@ -10,8 +11,17 @@ const Layout: FC<PropsWithChildren<any>> = ({
   isOpened,
 }) => {
   const router = useRouter();
+  const { themeData } = useCurrentTheme()
+  
   return (
-    <div className={m.container} style={{ height: `${children}` }}>
+    <section
+      data-theme={themeData?.nameTheme}
+      // data-theme="SunnyHills"
+      className={m.container}
+      style={{
+        height: `${children}`
+      }}
+    >
       <div className={m.backImageWrapper}>
         <div className={router.asPath === "/about" ? m.changeBar : m.wrapper}>
           {router.asPath !== "/auth" && (
@@ -21,7 +31,7 @@ const Layout: FC<PropsWithChildren<any>> = ({
         </div>
         {router.asPath !== "/auth" && <Footer />}
       </div>
-    </div>
+    </section>
   );
 };
 

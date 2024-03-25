@@ -6,6 +6,7 @@ import PaymentConfirm from "../UI/Popup/PaymentConfirm/PaymentConfirm";
 import { PresetService } from "@/services/preset/preset.services";
 import SearchPopup from "../UI/Popup/SearchPopup/SearchPopup";
 import SlicedReveal from "../UI/Reveal/SlicedReveal";
+import { useCurrentTheme } from "@/helpers/hooks/useOptions";
 
 type TProps = {
   marketValue: any;
@@ -26,10 +27,11 @@ type TPreset = {
 
 const Market: FC<TProps> = ({ marketValue, setIsOpened, isOpened }) => {
   const [active, setActive] = useState<boolean>(false);
+  const { themeData } = useCurrentTheme();
   const [currentPreset, setCurrentPreset] = useState<any>(null);
 
   return (
-    <section className={m.container}>
+    <section className={m.container} data-theme={themeData?.nameTheme}>
       <div className={m.wrapper}>
         <PageRouter title={"Market"} subTitle={null} />
 

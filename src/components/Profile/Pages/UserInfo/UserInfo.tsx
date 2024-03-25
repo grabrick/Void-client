@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 
-const UserInfo = () => {
+const UserInfo = ({ themeName }: {themeName: string}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const animateControll = useAnimation();
@@ -16,6 +16,7 @@ const UserInfo = () => {
   }, [isInView]);
   return (
     <motion.div
+      data-theme={themeName}
       className={m.container}
       ref={ref}
       style={{ position: "relative", overflow: "hidden" }}

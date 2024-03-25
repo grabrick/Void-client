@@ -4,14 +4,16 @@ import Clock from "./Clock/Clock";
 import m from "./SupportLeftBar.module.scss";
 
 type TProps = {
-  setIsOpenedCalendar: (value: boolean) => void
+  setIsOpenedCalendar: (value: boolean) => void,
+  nameTheme: string
 }
 
-const SupportLeftBar:FC<TProps> = ({ setIsOpenedCalendar }) => {
+const SupportLeftBar:FC<TProps> = ({ setIsOpenedCalendar, nameTheme }) => {
+
   return (
     <div className={m.container}>
-      <Clock />
-      <Calendar setIsOpenedCalendar={setIsOpenedCalendar} />
+      <Clock nameTheme={nameTheme} />
+      <Calendar setIsOpenedCalendar={setIsOpenedCalendar} nameTheme={nameTheme} />
     </div>
   );  
 };

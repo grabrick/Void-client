@@ -1,38 +1,97 @@
 @import '../../../../styles/const.scss';
 
-.clock {
-  display: flex;
-  align-items: center;
-  max-width: fit-content;
-  gap: 10px;
+.clock[data-theme="Default"] {
+  background-color: $Rainy-Dark;
 
   .hours {
-    font-size: 130px;
-    padding: 20px;
-    background-color: rgba(37, 37, 37, 0.50);
-    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    color: $FontColorWhite;
-    border-radius: 7px;
+    color: $Rainy-Dark;
+    background-color: $White;
+    // padding: 0px 10px;
+    width: 116px;
+    height: 121px;
   }
 
   .center {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    
-    .square {
-      width: 20px;
-      height: 20px;
-      background-color: $FontColorBlack;
-    }
+    // color: $Rainy-Dark;
+    background-color: $White;
   }
 
   .minutes {
-    font-size: 130px;
-    padding: 20px;
-    color: $FontColorWhite;
-    background-color: rgba(37, 37, 37, 0.50);
-    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 7px;
+    color: $Rainy-Dark;
+    background-color: $White;
+    // padding: 0px 10px;
+    width: 116px;
+    height: 121px;
+  }
+}
+
+.clock[data-theme="RainyDay"] {
+  background-color: $Rainy-Dark50;
+
+  .hours {
+    color: $White;
+    background-color: $Rainy-Dark70;
+    border-top: 2px solid $Rainy-Borders;
+    box-shadow: 0 10px 10px 0 rgba(120, 188, 202, 0.25);
+    width: 116px;
+    height: 121px;
+  }
+
+  .center {
+    background-color: $Rainy-Borders;
+  }
+
+  .minutes {
+    color: $White;
+    background-color: $Rainy-Dark70;
+    border-top: 2px solid $Rainy-Borders;
+    box-shadow: 0 10px 10px 0 rgba(120, 188, 202, 0.25);
+    width: 116px;
+    height: 121px;
+  }
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: fit-content;
+  padding: 30px;
+  border-radius: 20px;
+  gap: 23px;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5);
+
+  .hours {
+    // font-size: 130px;
+    font-size: 90px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 20px;
+    // background-color: rgba(37, 37, 37, 0.50);
+    // box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+
+  .center {
+    // display: flex;
+    // flex-direction: column;
+    // gap: 50px;
+    height: 60px;
+    width: 2px;
+  }
+
+  .minutes {
+    // font-size: 130px;
+    font-size: 90px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 20px;
+    // background-color: rgba(37, 37, 37, 0.50);
+    // box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
   }
 }

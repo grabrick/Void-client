@@ -3,19 +3,24 @@ import { redirectBasedOnToken } from "@/helpers/auth-redirect";
 import Head from 'next/head'
 import { GetServerSideProps } from "next";
 import { redirectFirstUsers } from "@/helpers/user-redirect";
-import Todo from "@/components/Todo/Todo";
 import { UserService } from "@/services/user/user.services";
-// import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
+
+const DynamicTodo = dynamic(
+  () => import("@/components/Todo/Todo"),
+  {
+    ssr: false,
+  }
+)
 
 export default function Home({findUser}: any) {
-  // const router = useRouter()
   return (
     <>
       <Head>
         <title>Void</title>
       </Head>
       <Layout>
-        <Todo validateData={findUser} />
+        <DynamicTodo validateData={findUser} />
       </Layout>
     </>
   );

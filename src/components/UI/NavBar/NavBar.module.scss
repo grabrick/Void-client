@@ -1,26 +1,47 @@
 @import '../../../styles/const.scss';
 
+.buttonWrapper[data-theme="Default"] {
+    background-color: $Dark;
+
+    .navButton {
+        background-color: $White;
+        color: $Dark;
+    }
+}
+
+.buttonWrapper[data-theme="RainyDay"] {
+    background-color: $Dark50;
+
+    .navButton {
+        background: $Rainy-BlueGradientDark;
+        border-bottom: 3px solid $Rainy-Borders;
+        color: $White;
+    }
+}
+
 .buttonWrapper {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    width: 250px;
-    padding: 10px 20px;
-    background-color: $Dark50;
-    border-radius: 5px;
+    gap: 30px;
+    // width: 250px;
+    width: 100%;
+    max-width: 230px;
+    padding: 30px;
+    border-radius: 10px;
     box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
     .navButton {
         font-size: 28px;
-        border-radius: 5px;
+        border-radius: 10px;
         border: none;
-        background-color: $Dark;
-        padding: 5px 25px;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5);
+        padding: 5px 0px 5px 13px;
+        display: flex;
+        justify-content: flex-start;
         cursor: pointer;
-        color: $White;
         display: flex;
         align-items: center;
-        flex: 0;
+        // flex: 0;
         gap: 10px;
 
         &:hover {

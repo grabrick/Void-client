@@ -17,9 +17,9 @@ const SlicedReveal = ({ children, width, duration, delay }: Props) => {
     animateControll.start("visible");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
-
+  // style={{ position: "relative", width, overflow: "hidden" }}
   return (
-    <div ref={ref} style={{ position: "relative", width, overflow: "hidden" }}>
+    <div ref={ref} style={{ position: "relative", width }}>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },

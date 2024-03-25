@@ -6,37 +6,13 @@ import m from "./Todo.module.scss";
 import FullCalendar from "../UI/Popup/FullCalendar/FullCalendar";
 import FolderTable from "./FolderTable/FolderTable";
 import SlicedReveal from "../UI/Reveal/SlicedReveal";
+import { useCurrentTheme } from "@/helpers/hooks/useOptions";
+import { motion } from "framer-motion";
 
 const Todo = ({ validateData }: any) => {
   const pressetConfig = validateData.user.activePresset;
   const [isOpenedCalendar, setIsOpenedCalendar] = useState<boolean>(false);
-  const data = {
-    headers: ["#", "Folder Name", "Tags", "Date", "Closed"],
-    rows: [
-      {
-        number: 1,
-        folderName: "School education (118)",
-        tags: ["education", "school"],
-        date: "12.02.2023 02:20pm",
-        closed: true,
-        cells: [
-          "1",
-          "School education (118)",
-          "education, school",
-          "12.02.2023 02:20pm",
-          "true",
-        ],
-      },
-      {
-        number: 2,
-        folderName: "Work (123)",
-        tags: ["job", "work"],
-        date: "10.02.2023 08:30am",
-        closed: false,
-        cells: ["2", "Work (123)", "job, work", "10.02.2023 08:30am", "false"],
-      },
-    ],
-  };
+  const { themeData } = useCurrentTheme();
 
   return (
     <section className={m.container}>
@@ -47,10 +23,10 @@ const Todo = ({ validateData }: any) => {
 
             <div className={m.content}>
               <SlicedReveal duration={0.7} delay={0.5}>
-                <SupportLeftBar setIsOpenedCalendar={setIsOpenedCalendar} />
+                <SupportLeftBar setIsOpenedCalendar={setIsOpenedCalendar} nameTheme={themeData?.nameTheme} />
               </SlicedReveal>
-              <SlicedReveal duration={0.7} delay={0.5}>
-                <FolderTable data={data} />
+              <SlicedReveal duration={0.7} delay={0.5} width="100%">
+                <FolderTable nameTheme={themeData?.nameTheme} />
               </SlicedReveal>
             </div>
           </div>

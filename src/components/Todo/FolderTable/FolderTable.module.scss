@@ -1,19 +1,127 @@
 @import '../../../styles/const.scss';
 
+.windowTodo[data-theme="Default"] {
+  background-color: $Rainy-Dark;
+
+  .todoHeader {
+    border-bottom: 2px solid $White;
+
+    .button {
+      background: $White;
+      color: $Dark;
+    }
+  }
+
+  .folderContainer {
+    background-color: $Rainy-Dark70;
+
+    .folder {
+      background: $White;
+
+      .nameWrapper {
+        .number {
+          color: $Dark;
+        }
+
+        .middleLine {
+          background: $Dark;
+        }
+
+        .name {
+          color: $Dark;
+        }
+      }
+
+      .miscWrapper {
+        .tags {
+          border: 2px solid $Dark;
+          .tag {
+            color: $Dark;
+          }
+          .date {
+            color: $Dark;
+          }
+        }
+
+        .lock {
+          border: 2px solid $Dark;
+        }
+      }
+    }
+  }
+}
+
+.windowTodo[data-theme="RainyDay"] {
+  background-color: $Rainy-Dark50;
+
+  .todoHeader {
+    border-bottom: 2px solid $Rainy-Borders;
+
+    .button {
+      background: $Rainy-BlueGradientDark;
+      color: $White;
+    }
+  }
+
+  .folderContainer {
+    background-color: $Rainy-Dark70;
+
+    .folder {
+      background: $Rainy-DarkBlue2;
+      border-bottom: 2px solid $Rainy-Borders;
+
+      .nameWrapper {
+
+        .number {
+          color: $White;
+        }
+
+        .middleLine {
+          background: $White;
+        }
+
+        .name {
+          color: $White;
+        }
+      }
+
+      .miscWrapper {
+        .tags {
+          background: $Rainy-LightBlue;
+          // box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+
+          .tag {
+            color: $White;
+          }
+          .date {
+            color: $White;
+          }
+        }
+
+        .lock {
+          background: $Rainy-LightBlue;
+          // border: 2px solid $Dark;
+        }
+      }
+    }
+  }
+}
+
 .windowTodo {
-  width: 1000px;
+  width: 100%;
   // height: 600px;
   display: flex;
   flex-direction: column;
-  background-color: $Dark50;
-  box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  border-radius: 7px;
+  // background-color: $Dark50;
+  box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  position: relative;
 
   .todoHeader {
     // background-color: #fff;
-    border-bottom: 1px solid $White;
+    
     border-radius: 5px 5px 0 0;
-    padding: 10px;
+    padding: 20px 35px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,16 +132,15 @@
       gap: 20px;
 
       .button {
-        background-color: $White;
-        color: $Dark;
         border: none;
         display: flex;
         align-items: center;
         gap: 10px;
         font-size: 25px;
-        padding: 5px 10px;
-        border-radius: 7px;
+        padding: 10px;
+        border-radius: 10px;
         cursor: pointer;
+        box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.25);
 
         &:hover {
           transform: scale(1.1);
@@ -48,68 +155,60 @@
     }
   }
 
-  .section {
-    cursor: pointer;
-    
-    &:hover {
-      background-color: #ffffff29;
-      transition: all 0.5s ease-out;
+  .folderContainer {
+    margin: 40px 35px;
+    padding: 30px;
+    border-radius: 20px;
+    // height: 40px;
+
+    .folder {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 10px;
+      padding: 10px 20px 10px 20px;
+
+      .nameWrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .number {
+          font-weight: 400;
+          font-size: 30px;
+        }
+
+        .middleLine {
+          width: 2px;
+          height: 30px;
+        }
+
+        .name {
+          font-weight: 400;
+          font-size: 24px;
+        }
+      }
+
+      .miscWrapper {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .tags {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          border-radius: 10px;
+          padding: 10px;
+        }
+
+        .lock {
+          cursor: pointer;
+          border-radius: 10px;
+          padding: 7px;
+          height: 100%;
+        }
+      }
     }
-  }
-
-  .headerTitle {
-    font-family: 'VT323';
-    font-size: 25px;
-    color: $White;
-    padding: 5px;
-
-    &:nth-child(1) {
-      width: 40px;
-    }
-
-    &:nth-child(2) {
-      width: 500px;
-      text-align: left;
-    }
-
-    &:nth-child(3) {
-      width: 100px;
-    }
-
-    &:nth-child(4) {
-      width: 100px;
-    }
-
-    &:nth-child(5) {
-      width: 100px;
-    }
-  }
-
-  .rowTitle {
-    font-family: 'VT323';
-    font-size: 20px;
-    color: $White;
-    text-align: center;
-
-    &:nth-child(2) {
-      text-align: left;
-      padding-left: 5px;
-    }
-  }
-}
-
-.table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.table th,
-.table td {
-  // border: 1px solid #fff;
-  border-left: 1px solid $White;
-  border-bottom: 1px solid $White;
-
-  &:nth-child(1) {
-    border-left: none;
   }
 }

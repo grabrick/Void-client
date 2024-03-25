@@ -1,7 +1,7 @@
 import m from "./Clock.module.scss";
 import { useState, useEffect } from "react";
 
-const Clock = () => {
+const Clock = ({nameTheme}: {nameTheme: string}) => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -20,12 +20,9 @@ const Clock = () => {
   const minutes = formatNumber(currentTime.getMinutes());
 
   return (
-    <div className={m.clock}>
+    <div className={m.clock} data-theme={nameTheme}>
       <h1 className={m.hours}>{hours}</h1>
-      <div className={m.center}>
-        <div className={m.square} />
-        <div className={m.square} />
-      </div>
+      <div className={m.center} />
       <h1 className={m.minutes}>{minutes}</h1>
     </div>
   );

@@ -14,10 +14,11 @@ import {
 import { FC, useState } from "react";
 
 type TProps = {
-  setIsOpenedCalendar: (value: boolean) => void
-}
+  setIsOpenedCalendar: (value: boolean) => void;
+  nameTheme: string;
+};
 
-const Calendar:FC<TProps> = ({ setIsOpenedCalendar }) => {
+const Calendar: FC<TProps> = ({ setIsOpenedCalendar, nameTheme }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const currentMonthStart = startOfMonth(currentDate);
   const currentMonthEnd = endOfMonth(currentDate);
@@ -38,21 +39,31 @@ const Calendar:FC<TProps> = ({ setIsOpenedCalendar }) => {
   const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
   return (
-    <div className={m.calendar}>
+    <div className={m.calendar} data-theme={nameTheme}>
       <div className={m.header}>
-        <Image
-          className={m.img}
-          src={Left}
-          onClick={() => prevMonth()}
-          alt=""
-        />
-        <h1 className={m.dateName} onClick={() => setIsOpenedCalendar(true)}>{format(currentDate, "MMMM")}</h1>
-        <Image
-          className={m.img}
-          src={Right}
-          onClick={() => nextMonth()}
-          alt=""
-        />
+        <button className={m.arrowBtn}>
+          <Image
+            className={m.img}
+            src={Left}
+            onClick={() => prevMonth()}
+            alt=""
+          />
+        </button>
+
+        {/* <h1 className={m.dateName} onClick={() => setIsOpenedCalendar(true)}>
+          {format(currentDate, "MMMM")}
+        </h1> */}
+        <h1 className={m.dateName}>
+          {format(currentDate, "MMMM")}
+        </h1>
+        <button className={m.arrowBtn}>
+          <Image
+            className={m.img}
+            src={Right}
+            onClick={() => nextMonth()}
+            alt=""
+          />
+        </button>
       </div>
       <div className={m.daysHeader}>
         {daysOfWeek.map((day, index) => (

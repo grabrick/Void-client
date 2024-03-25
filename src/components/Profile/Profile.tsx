@@ -10,6 +10,8 @@ import Setting from "./Pages/Setting/Setting";
 import History from "./Pages/History/History";
 import Vault from "./Pages/Vault/Vault";
 import { motion, useAnimation, useInView } from "framer-motion";
+import Themes from "./Pages/Themes/Themes";
+import { useCurrentTheme } from "@/helpers/hooks/useOptions";
 
 type TProps = {
   setCurrentPage: (value: string | null) => void;
@@ -20,6 +22,7 @@ const Profile = ({ setCurrentPage }: TProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
   const animateControll = useAnimation();
+  const { themeData } = useCurrentTheme();
 
   useEffect(() => {
     animateControll.start("visible");
@@ -43,10 +46,11 @@ const Profile = ({ setCurrentPage }: TProps) => {
           {/* </div> */}
 
           <div className={m.rightBar}>
-            {change === "Setting" && <Setting />}
-            {change === "History" && <History />}
-            {change === "Vault" && <Vault />}
-            {change === null && <UserInfo />}
+            {change === "Setting" && <Setting themeName={themeData?.nameTheme} />}
+            {change === "History" && <History themeName={themeData?.nameTheme} />}
+            {change === "Vault" && <Vault themeName={themeData?.nameTheme} />}
+            {change === "Themes" && <Themes themeName={themeData?.nameTheme} />}
+            {change === null && <UserInfo themeName={themeData?.nameTheme} />}
           </div>
         </div>
       </div>

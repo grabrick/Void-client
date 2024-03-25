@@ -61,7 +61,7 @@
                     justify-content: flex-end;
 
                     .button {
-                        background-color: $FontColorWhite;
+                        background-color: $White;
                         font-family: $FontFam;
                         border-radius: 5px;
                         font-size: 25px;
@@ -84,9 +84,9 @@
                     .questionBtn {
                         font-size: 25px;
                         font-family: $FontFam;
-                        color: $FontColorBlack;
+                        color: $Dark;
                         padding: 5px 13px;
-                        background-color: $FontColorWhite;
+                        background-color: $White;
                         border: none;
                         border-radius: 5px;
                         cursor: pointer;
@@ -99,7 +99,7 @@
 
                     .question {
                         font-family: $FontFam;
-                        color: $FontColorWhite;
+                        color: $White;
                         font-size: 30px;
 
                         @media screen and (max-width: 1680px) {
@@ -115,7 +115,7 @@
                     background-color: transparent;
                     font-size: 40px;
                     font-family: $FontFam;
-                    color: $FontColorWhite;
+                    color: $White;
                     border: none;
                     border-bottom: 2px solid #fff;
 

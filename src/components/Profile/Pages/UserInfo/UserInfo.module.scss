@@ -1,7 +1,14 @@
 @import '../../../../styles/const.scss';
 
-.container {
+.container[data-theme="Default"] {
+  background-color: $Dark;
+}
+
+.container[data-theme="RainyDay"] {
   background-color: $Dark50;
+}
+
+.container {
   border-radius: 10px;
   min-height: 360px;
   border-radius: 10px;

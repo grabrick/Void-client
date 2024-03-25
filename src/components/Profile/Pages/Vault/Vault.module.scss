@@ -1,7 +1,14 @@
 @import '../../../../styles/const.scss';
 
-.container {
+.container[data-theme="Default"] {
+  background-color: $Dark;
+}
+
+.container[data-theme="RainyDay"] {
   background-color: $Dark50;
+}
+
+.container {
   box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   min-height: 360px;

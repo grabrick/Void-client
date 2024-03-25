@@ -1,11 +1,21 @@
 // COLORS
-$FontColorBlack: #252525;
-$FontColorWhite: #fff;
-$CardColor: #252525;
-
 $White: #fff;
 $Dark: #252525;
 $Dark50: rgba(37, 37, 37, 0.50);
 
 
-$FontFam: 'VT323';
+$FontFam: 'Pixelify Sans';
+
+
+
+// Themas
+$Rainy-BlueGradientDark: linear-gradient(135deg, #44b8cd 0%, #0e7b91 100%);
+$Rainy-BlueGradientLight: linear-gradient(135deg, #44b8cd 0%, #0e7b91 100%);
+$Rainy-DarkBlue2: #234f62;
+$Rainy-DarkBlue: #0a2936;
+$Rainy-LightBlue: #51adc0;
+$Rainy-Borders: #78bcca;
+$Rainy-Dark70: rgba(3, 9, 12, 0.7);
+$Rainy-Dark50: rgba(37, 37, 37, 0.5);
+$Rainy-Dark: #252525;
+$Rainy-White: #fff;

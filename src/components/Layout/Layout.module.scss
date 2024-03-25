@@ -1,9 +1,22 @@
+.container[data-theme="Default"] {
+  background-image: url('../../assets/images/DefaultBg.jpg');
+}
+
+.container[data-theme="RainyDay"] {
+  background-image: url('../../assets/gifs/kerryParkRainy.gif');
+}
+
+.container[data-theme="SunnyHills"] {
+  background-image: url('../../assets/gifs/SunnyHills.gif');
+}
+
 .container {
   display: flex;
   flex-direction: column;
   height: 100%;
   max-height: 1080px;
-  background-image: url('../../assets/gifs/kerry\ park\ -\ rainy\,\ Ryan\ Haight.gif');
+  background-size: cover;
+  background-image: none;
   background-position: top center;
   background-repeat: no-repeat;
 
@@ -22,9 +35,11 @@
   }
 
   .main {
-    max-width: 1920px;
+    // max-width: 1920px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 150px;
+    padding-top: 140px;
+    // padding: 0 150px;
   }
 
   .changeBar {

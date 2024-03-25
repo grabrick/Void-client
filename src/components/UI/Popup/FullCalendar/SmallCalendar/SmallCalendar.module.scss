@@ -1,8 +1,8 @@
 @import '../../../../../styles/const.scss';
 
 .calendar {
-  background-color: $FontColorBlack;
-  border: 2px solid $FontColorBlack;
+  background-color: $Dark;
+  border: 2px solid $Dark;
   width: 240px;
   height: 250px;
   border-radius: 5px;
@@ -22,7 +22,7 @@
       border-radius: 7px;
 
       &:hover {
-        background-color: $FontColorBlack;
+        background-color: $Dark;
         transition: all 0.5s ease-out;
         color: #fff;
       }
